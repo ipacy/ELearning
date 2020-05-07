@@ -1,0 +1,173 @@
+<mvc:View
+        controllerName="pacbot.controller.Lol.Lol"
+        displayBlock="true"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:f="sap.f"
+        xmlns:card="sap.f.cards"
+        xmlns:core="sap.ui.core"
+        xmlns:ux="sap.uxap"
+        xmlns:l="sap.ui.layout"
+        xmlns:grid="sap.ui.layout.cssgrid"
+        xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <List items="{path:'mainModel>/Questions', templateShareable:false, factory: '.productListFactory'}" id="chatList" modeAnimationOn="true" updateFinished="updateFinished">
+        <dependents>
+        <CustomListItem id="productSimple">
+            <Panel>
+                <headerToolbar>
+                    <Toolbar>
+
+                        <core:Icon src="{sap-icon://my-view}"/>
+                        <Title text="{mainModel>q}"/>
+                        <ToolbarSpacer/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <VBox>
+                    <SegmentedButton selectedKey="kids" items="{ path: 'mainModel>ans', templateShareable:false }"
+                                     width="100%">
+                        <items>
+                            <SegmentedButtonItem text="{mainModel>name}" press="onSelectAnswer" width="8rem"/>
+                        </items>
+                    </SegmentedButton>
+                    	<VBox items="{ path: 'mainModel>ans', templateShareable:false }" class="sapUiSmallMargin">
+                            <VBox visible="false">
+                            <!--	<f:Avatar
+                                    src="{mainModel>picture}"
+                                    displaySize="XL"
+                                    displayShape="Square">
+                                </f:Avatar> -->
+                                 <RadioButton groupName="GroupA" text="{mainModel>name}"  selected="{mainModel>selected}" select="onSelectAnswer"/>
+                                </VBox>
+                        </VBox>
+                    </VBox>
+
+                </content>
+
+            </Panel>
+
+        </CustomListItem>
+        </dependents>
+    </List>
+</mvc:View>
+
+
+<!--    <VBox alignItems="Center" visible="false">
+        <f:Card
+                class="sapUiMediumMargin"
+                width="300px">
+            <f:header>
+                <card:Header
+                        title="{mainModel>q}"
+                        iconSrc="sap-icon://my-view"/>
+            </f:header>
+            <f:content>
+                <List
+                        id="ProductList"
+                        visible="{=${mainModel>ans}.length > 0}"
+                        includeItemInSelection="true"
+                        items="{ path: 'mainModel>ans', templateShareable:false }">
+                    <StandardListItem type="Active"
+                                      title="{mainModel>name}"
+                                      description="{ProductId}"
+                                      press="onSelectAnswer"/>
+                </List>
+
+
+            </f:content>
+        </f:Card>
+    </VBox>
+        -->
+<!-- <ux:ObjectPageLayout useIconTabBar="true" navigate="onTabSelect" upperCaseAnchorBar="false">
+     <ux:headerTitle>
+         <ux:ObjectPageHeader
+                 objectTitle="" objectSubtitle=""
+                 id="EditorHeaderTitle" isObjectIconAlwaysVisible="false"
+                 isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="false"
+                 isActionAreaAlwaysVisible="true" showPlaceholder="true">
+             <ux:actions>
+
+             </ux:actions>
+
+         </ux:ObjectPageHeader>
+     </ux:headerTitle>
+     <ux:headerContent>
+
+     </ux:headerContent>
+     <ux:sections>
+         <ux:ObjectPageSection title="" class="bgSec">
+             <ux:subSections>
+                 <ux:ObjectPageSubSection id="uxDesignSection2">
+                     <ux:blocks>
+
+                     </ux:blocks>
+                 </ux:ObjectPageSubSection>
+             </ux:subSections>
+         </ux:ObjectPageSection>
+     </ux:sections>
+ </ux:ObjectPageLayout>
+</mvc:View> -->
+<!--   <f:GridList id="gridList"
+                                                           items="{ path: 'mainModel>ans', templateShareable:false }">
+                                                   <f:customLayout>
+                                                       <grid:GridBoxLayout boxMinWidth="17rem"/>
+                                                   </f:customLayout>
+                                                   <CustomListItem>
+                                                       <VBox class="sapUiSmallMargin">
+                                                           <layoutData>
+                                                               <FlexItemData growFactor="1"
+                                                                             shrinkFactor="0"/>
+                                                           </layoutData>
+                                                           <RadioButton select="onSelectAnswer"
+                                                                        text="{mainModel>name}"/>
+                                                       </VBox>
+                                                   </CustomListItem>
+                                               </f:GridList> -->
+<!--        <Table items="{mainModel>/Questions}" id="chatTables">
+<columns>
+   <Column hAlign="Begin">
+       <Text text="Q"/>
+   </Column>
+   <Column hAlign="End">
+        <Text text="A"/>
+   </Column>
+</columns>
+<items>
+   <ColumnListItem>
+       <cells>
+           <Text text="{mainModel>q}"/>
+              <RadioButtonGroup columns="3" width="100%" class="sapUiMediumMarginBottom"  buttons="{mainModel>ans}">
+               <buttons>
+                   <RadioButton text="{mainModel>a}"/>
+               </buttons>
+           </RadioButtonGroup>
+       </cells>
+   </ColumnListItem>
+</items>
+</Table> -->
+<!--<InputListItem label="{mainModel>q}">
+<RadioButtonGroup columns="3" width="100%" class="sapUiMediumMarginBottom"  buttons="{path:'mainModel>ans', templateShareable:false}">
+ <buttons>
+     <RadioButton text="{mainModel>a}"/>
+ </buttons>
+</RadioButtonGroup>
+</InputListItem>-->
+<!--    <VBox alignItems="Center">
+
+    <RadioButtonGroup columns="3" width="100%" selectedIndex="{mainModel>selectedIndex}" class="sapUiMediumMarginBottom"
+                       buttons="{mainModel>ans}" select="onSelectAnswer">
+         <buttons>
+             <RadioButton text="{mainModel>a}"/>
+         </buttons>
+     </RadioButtonGroup>
+      </VBox> -->
+<!--  <VBox alignItems="Center">
+   <Text text="{mainModel>q}" width="100%"/>
+
+   <RadioButtonGroup columns="3" width="100%" class="sapUiMediumMarginBottom"  buttons="{mainModel>ans}">
+       <buttons>
+           <RadioButton text="{mainModel>a}"/>
+       </buttons>
+   </RadioButtonGroup>
+</VBox> -->

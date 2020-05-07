@@ -1,0 +1,126 @@
+{
+    "_version": "1.2.0",
+    "sap.app": {
+        "_version": "1.2.0",
+        "id": "pacbot",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "PAC Bot",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+        }
+    },
+    "sap.ui": {
+        "_version": "1.2.0",
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.2.0",
+        "handleValidation": true,
+
+        "rootView": {
+            "viewName": "pacbot.view.App",
+            "type": "XML",
+            "id": "Vistex-DS"
+        },
+        "dependencies": {
+            "minUI5Version": "1.64.0",
+          "libs": {
+            "sap.ui.core": {
+              "minVersion": "1.64.0"
+            },
+            "sap.m": {
+              "minVersion": "1.64.0"
+            },
+            "sap.uxap": {
+              "minVersion": "1.64.0"
+            },
+            "sap.ui.table": {
+              "minVersion": "1.64.0"
+            },
+            "sap.ui.layout": {
+              "minVersion": "1.64.0"
+            },
+            "sap.tnt": {
+              "minVersion": "1.64.0"
+            },
+            "sap.suite.ui.commons": {
+              "minVersion": "1.64.0"
+            },
+            "sap.f": {
+              "minVersion": "1.64.0"
+            }
+          }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "pacbot.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "style/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "pacbot.view",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target": [ "lol" ]
+                }
+            ],
+            "targets": {
+                "lol": {
+                    "viewName": "Lol",
+                    "viewPath": "pacbot.view.Lol",
+                    "viewId": "lol",
+                    "transition": "show",
+                    "controlId": "Vistex-DS",
+                    "controlAggregation": "pages",
+                    "title": "{i18n>Lol}"
+                }
+            }
+        }
+    }
+}

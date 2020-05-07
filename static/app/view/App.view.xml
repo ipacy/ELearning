@@ -1,0 +1,37 @@
+﻿<mvc:View
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:tnt="sap.tnt"
+        xmlns:c="pacbot.control"
+        controllerName="pacbot.controller.App"
+        displayBlock="true"
+        busy="{globalModel>/appBusy}"
+        busyIndicatorDelay="0"
+        class="sapUiSizeCompact">
+    <tnt:ToolPage>
+        <tnt:header>
+            <tnt:ToolHeader>
+                <ToolbarSpacer/>
+                <Title text="{i18n>AppTitle}"/>
+                <ToolbarSpacer/>
+                <!--  <ToolbarSpacer width="1rem"/>
+                  <Button icon="sap-icon://home" type="Transparent" press="onNavHome"/>
+                  <Title text="{i18n>AppTitle}"/>
+                  <ToolbarSpacer width="calc(50% - 15%)"/>
+                  <Title text="{globalModel>/headerTitle}"/>
+                  <ToolbarSpacer/>
+                  <Button class="notifLabel" icon="sap-icon://bell" type="Transparent"
+                          text="{= ${globalModel>/userInfo/Notifications}.length }" press="onNotificationButtonPress"
+                          visible="{= ${globalModel>/userInfo/Notifications} !== null &amp;&amp; ${globalModel>/userInfo/Notifications}.length > 0}"/>
+                  <Text text="{globalModel>/userInfo/User/Name}"/>
+                  <ToolbarSpacer width="1rem"/>
+                  -->
+            </tnt:ToolHeader>
+        </tnt:header>
+        <tnt:mainContents>
+            <App id="Vistex-DS"/>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+
+</mvc:View>

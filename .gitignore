@@ -1,2 +1,4 @@
-.env
-db.sqlite3
+/.env/
+/db.sqlite3/
+/dexenv/
+/.idea/

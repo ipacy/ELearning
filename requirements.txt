@@ -24,7 +24,7 @@ jsonfield==2.0.2
 Markdown==3.1.1
 oauthlib==3.1.0
 openapi-codec==1.3.2
-Pillow==7.1.1
+Pillow==8.1.1
 psycopg2-binary==2.8.5
 Pygments==2.4.2
 uritemplate==3.0.0

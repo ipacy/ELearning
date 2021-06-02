@@ -28,7 +28,7 @@ Pillow==7.1.1
 psycopg2-binary==2.8.5
 Pygments==2.4.2
 uritemplate==3.0.0
-urllib3==1.25.3
+urllib3==1.26.5
 web-pdb==1.5.1
 wfastcgi==3.0.0
 whitenoise==4.1.4
